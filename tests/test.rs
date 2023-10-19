@@ -11,7 +11,7 @@ fn new() {
 #[test]
 fn from_vec() {
     let ov: [f32; 3] = [1.0, 0.0, 0.0];
-    let cv = CompUnitVec::from_vec(&ov);
+    let cv = CompUnitVec::from_slice(&ov);
     let v = cv.get();
     assert_eq!(ov, v);
 }

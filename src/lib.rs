@@ -11,7 +11,7 @@ impl CompUnitVec {
         Self { value }
     }
 
-    pub fn from_vec(v: &[f32; 3]) -> Self {
+    pub fn from_slice(v: &[f32; 3]) -> Self {
         Self {
             value: pack(v[0], v[1], v[2]),
         }
@@ -65,7 +65,6 @@ fn create_lut() -> [f32; 0x2000] {
 
 fn pack(mut x: f32, mut y: f32, mut z: f32) -> u16 {
     let mut res: u16 = 0;
-
     if x < 0.0 {
         res |= XSIGN_MASK;
         x = -x;
