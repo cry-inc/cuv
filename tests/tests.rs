@@ -1,4 +1,4 @@
-use cuv::CompUnitVec;
+use cuv::*;
 use rand::{Rng, SeedableRng};
 
 #[test]
@@ -76,4 +76,16 @@ fn random_vectors() {
         assert!(dy < MAX_ALLOWED_ERR);
         assert!(dz < MAX_ALLOWED_ERR);
     }
+}
+
+#[test]
+fn low_level_interface() {
+    let lut = create_lut();
+    let cv = pack(1.0, 0.0, 0.0);
+    assert_eq!(cv, 255);
+
+    let xyz = unpack(cv, &lut);
+    assert_eq!(xyz[0], 1.0);
+    assert_eq!(xyz[1], 0.0);
+    assert_eq!(xyz[2], 0.0);
 }
