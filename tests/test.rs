@@ -51,9 +51,9 @@ fn random_vectors() {
     const MAX_ALLOWED_ERR: f32 = 0.03;
     let mut rng = rand::rngs::StdRng::from_seed([0_u8; 32]);
     for _ in 0..10000000 {
-        let x: f32 = rng.gen();
-        let y: f32 = rng.gen();
-        let z: f32 = rng.gen();
+        let x = rng.gen::<f32>() - 0.5;
+        let y = rng.gen::<f32>() - 0.5;
+        let z = rng.gen::<f32>() - 0.5;
 
         let len = (x * x + y * y + z * z).sqrt();
         let nx = x / len;
