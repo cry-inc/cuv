@@ -1,3 +1,7 @@
+// Based on work of Rafael Baptista (rafael@oroboro.com)
+// Accuracy improved by O.D. (punkfloyd@rocketmail.com)
+// Converted to Rust by cry-inc (https://github.com/cry-inc)
+
 const SIGN_MASK: u16 = 0xe000;
 const XSIGN_MASK: u16 = 0x8000;
 const YSIGN_MASK: u16 = 0x4000;
