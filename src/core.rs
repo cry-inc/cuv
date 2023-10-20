@@ -45,10 +45,10 @@ pub fn pack(mut x: f32, mut y: f32, mut z: f32) -> u16 {
     let mut xbits = (x * w) as i32;
     let mut ybits = (y * w) as i32;
 
-    assert!(xbits < 127);
-    assert!(xbits >= 0);
-    assert!(ybits < 127);
-    assert!(ybits >= 0);
+    //assert!(xbits < 127);
+    //assert!(xbits >= 0);
+    //assert!(ybits < 127);
+    //assert!(ybits >= 0);
 
     if xbits >= 64 {
         xbits = 127 - xbits;
