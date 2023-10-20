@@ -1,4 +1,10 @@
 # Compressed Unit Vectors
+[![Build Status](https://github.com/cry-inc/cuv/workflows/Build/badge.svg)](https://github.com/cry-inc/cuv/actions)
+[![Crates.io](https://img.shields.io/crates/v/cuv.svg)](https://crates.io/crates/cuv)
+[![Documentation](https://docs.rs/cuv/badge.svg)](https://docs.rs/cuv)
+[![No Unsafe](https://img.shields.io/badge/unsafe-forbidden-brightgreen.svg)](https://doc.rust-lang.org/nomicon/meet-safe-and-unsafe.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Dependencies](https://deps.rs/repo/github/cry-inc/cuv/status.svg)](https://deps.rs/repo/github/cry-inc/cuv)
 
 A Rust library for compressed unit vectors.
 It is a simple Rust port of [some C/C++ code by someone else](#original-source).
