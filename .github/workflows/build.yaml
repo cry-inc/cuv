@@ -1,0 +1,31 @@
+name: Build
+on: [push, pull_request]
+jobs:
+  Linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Update Rust
+        run: rustup toolchain install stable --profile minimal --no-self-update
+      - name: Release Build
+        run: cargo build --release --all
+      - name: Execute Tests
+        run: cargo test --release --all
+      - name: Run Clippy
+        run: cargo clippy --release --all -- -D warnings
+      - name: Check Formatting
+        run: cargo fmt --all -- --check
+      - name: Check Docs
+        run: RUSTDOCFLAGS="-Dwarnings" cargo doc --package cuv
+  Windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Update Rust
+        run: rustup toolchain install stable --profile minimal --no-self-update
+      - name: Release Build
+        run: cargo build --release --all
+      - name: Execute Tests
+        run: cargo test --release --all
