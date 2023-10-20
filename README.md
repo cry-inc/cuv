@@ -1,11 +1,14 @@
 # Compressed Unit Vectors
 
 A Rust library for compressed unit vectors.
-It is a simple Rust port of some C/C++ code by someone else.
+It is a simple Rust port of [some C/C++ code by someone else](#original-source).
 
 It can be used to efficiently store and transfer things like normal vectors used in computer graphics.
 You can use it lower the memory footsprint or reduce the size of files on disk.
 Intead of three 32 bit floats you can represent the unit vector with a single 16 bit unsigned integer.
+
+The compression itself is **lossy**, so most input values will be mapped to something slighty different when being unpacked.
+For many use cases this loss is acceptable. Please make sure this applies to your case as well.
 
 ## Getting Started
 
