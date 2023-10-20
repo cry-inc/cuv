@@ -11,6 +11,8 @@ categories = ["algorithms", "compression", "computer-vision", "mathematics", "re
 description = "Compressed unit vectors that can be used to store things like normal vectors efficiently."
 include = [
     "/src/**/*.rs",
+    "/benches/**/*.rs",
+    "/tests/**/*.rs",
     "/Cargo.toml",
     "/LICENSE",
     "/README.md",
