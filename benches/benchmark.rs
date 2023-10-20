@@ -1,5 +1,5 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use cuv::{unpack, pack, create_lut};
+use cuv::{create_lut, pack, unpack};
 
 fn create_lut_benchmark(c: &mut Criterion) {
     c.bench_function("create_lut()", |b| {
@@ -29,5 +29,10 @@ fn unpack_benchmark(c: &mut Criterion) {
     });
 }
 
-criterion_group!(benches, create_lut_benchmark, pack_benchmark, unpack_benchmark);
+criterion_group!(
+    benches,
+    create_lut_benchmark,
+    pack_benchmark,
+    unpack_benchmark
+);
 criterion_main!(benches);

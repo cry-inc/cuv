@@ -14,7 +14,7 @@ impl CompUnitVec {
             value: core::pack(x, y, z),
         }
     }
-    
+
     /// Constructor to create a new compressed unit vector an already compressed u16 value.
     pub fn from_u16(value: u16) -> Self {
         Self { value }
