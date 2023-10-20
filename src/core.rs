@@ -5,6 +5,9 @@ const ZSIGN_MASK: u16 = 0x2000;
 const TOP_MASK: u16 = 0x1f80;
 const BOTTOM_MASK: u16 = 0x007f;
 
+/// Creates the lookup table needed by the low level unpack function.
+///
+/// Since the table is read-only, you can use the same table for many unpack calls (in parallel).
 pub fn create_lut() -> [f32; 0x2000] {
     let mut table = [0_f32; 0x2000];
     for idx in 0..0x2000 {
@@ -26,6 +29,7 @@ pub fn create_lut() -> [f32; 0x2000] {
     table
 }
 
+/// Low level interface to convert a unit vector with three f32 components to a single u16 value.
 pub fn pack(mut x: f32, mut y: f32, mut z: f32) -> u16 {
     let mut res: u16 = 0;
     if x < 0.0 {
@@ -61,6 +65,7 @@ pub fn pack(mut x: f32, mut y: f32, mut z: f32) -> u16 {
     res
 }
 
+/// Low level interface to convert a single u16 value back to an unit vector with three f32 components.
 pub fn unpack(cv: u16, lut: &[f32; 0x2000]) -> [f32; 3] {
     let mut xbits = ((cv & TOP_MASK) >> 7) as i32;
     let mut ybits = (cv & BOTTOM_MASK) as i32;
