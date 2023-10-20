@@ -94,9 +94,29 @@ fn one_infinity() {
 }
 
 #[test]
+fn one_neg_infinity() {
+    let cv = pack(f32::NEG_INFINITY, 0.0, 0.0);
+    assert_eq!(cv, 32768);
+
+    let lut = create_lut();
+    let xyz = unpack(cv, &lut);
+    assert_eq!(xyz, [-0.0, 0.0, 1.0]);
+}
+
+#[test]
 fn all_infinity() {
     let cv = pack(f32::INFINITY, f32::INFINITY, f32::INFINITY);
     assert_eq!(cv, 0);
+}
+
+#[test]
+fn all_neg_infinity() {
+    let cv = pack(f32::NEG_INFINITY, f32::NEG_INFINITY, f32::NEG_INFINITY);
+    assert_eq!(cv, 57344);
+
+    let lut = create_lut();
+    let xyz = unpack(cv, &lut);
+    assert_eq!(xyz, [-0.0, -0.0, -1.0]);
 }
 
 #[test]
