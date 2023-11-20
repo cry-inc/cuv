@@ -7,7 +7,7 @@
 [![Dependencies](https://deps.rs/repo/github/cry-inc/cuv/status.svg)](https://deps.rs/repo/github/cry-inc/cuv)
 
 A Rust library for compressed unit vectors.
-It is a simple Rust port of [C/C++ code by someone else](#original-source).
+It is a simple Rust port of [some C/C++ code](#original-source).
 
 It can be used to efficiently store and transfer things like normal vectors used in computer graphics.
 You can use it lower the memory footsprint or reduce the size of files on disk.
