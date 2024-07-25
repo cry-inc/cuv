@@ -1,6 +1,7 @@
 use crate::core;
+use std::sync::LazyLock;
 
-static LUT: once_cell::sync::Lazy<[f32; 0x2000]> = once_cell::sync::Lazy::new(core::create_lut);
+static LUT: LazyLock<[f32; 0x2000]> = LazyLock::new(core::create_lut);
 
 /// A compressed unit vector representation with a size of two bytes.
 pub struct CompUnitVec {
