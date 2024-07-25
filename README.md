@@ -17,7 +17,6 @@ The compression itself is **lossy**, so most input values will be mapped to some
 For many use cases this loss is acceptable. Please make sure this applies to your case as well.
 
 ## Getting Started
-
 The library provides low level functions to pack and unpack the values and a high level "rustified" interface.
 
 The low level interface requires manual creation of a lookup-table:
@@ -39,9 +38,12 @@ assert_eq!(unpacked, [1.0, 0.0, 0.0]);
 ```
 
 ## Original Source
-
 The original C/C++ code comes from Rafael Baptista who published the idea in a long lost post.
 The code was originally described as "unit vector to 16-bit word conversion algorithm".
 
 In 2013 Rafael reposted the description and code again on his blog at
 [https://oroboro.com/compressed-unit-vectors/](https://web.archive.org/web/20201022211551/https://oroboro.com/compressed-unit-vectors/).
+
+## Benchmarks
+This repo includes some benchmarks implemented with Criterion.rs to be able to detect performance regressions during development.
+You can run the benchmarks using the command `cargo bench`.
